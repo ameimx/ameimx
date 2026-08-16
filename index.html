@@ -3,75 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evaluación comparativa de obras académicas</title>
+
+  <title>Evaluación comparativa de obras académicas | AMEI</title>
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f6f8;
       margin: 0;
       padding: 0;
       color: #222;
+      line-height: 1.5;
     }
 
     .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      background: white;
-      padding: 35px;
+      max-width: 1250px;
+      margin: 35px auto;
+      background-color: #ffffff;
+      padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
+
+    /* LOGOTIPO */
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo {
+      max-width: 280px;
+      width: 70%;
+      height: auto;
+    }
+
+    /* ENCABEZADOS */
 
     h1 {
       text-align: center;
-      color: #1f3c5c;
+      color: #1f4164;
+      font-size: 32px;
+      margin-top: 10px;
       margin-bottom: 10px;
     }
 
     h2 {
-      color: #1f3c5c;
+      color: #1f4164;
       margin-top: 35px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 35px;
     }
 
     .intro {
+      max-width: 950px;
+      margin: 0 auto 30px auto;
       text-align: center;
-      color: #555;
-      margin-bottom: 30px;
-      line-height: 1.6;
+      color: #444;
+      line-height: 1.7;
     }
+
+    /* OBRAS */
 
     .works {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 25px;
       margin: 30px 0;
     }
 
     .work-card {
-      background: #eef3f7;
-      border-left: 5px solid #1f3c5c;
-      padding: 20px;
-      border-radius: 8px;
+      background-color: #eef3f7;
+      border-left: 5px solid #1f4164;
+      padding: 22px;
+      border-radius: 7px;
       line-height: 1.6;
     }
 
-    .work-card strong {
-      color: #1f3c5c;
-      font-size: 18px;
+    .work-title {
+      color: #1f4164;
+      font-size: 19px;
+      font-weight: bold;
+      margin-bottom: 12px;
     }
 
+    /* ESCALA */
+
     .scale-box {
-      background: #f8fafc;
-      border: 1px solid #d7dee5;
-      padding: 20px 25px;
+      background-color: #f8fafc;
+      border: 1px solid #d6dde4;
       border-radius: 8px;
-      margin: 25px 0 35px 0;
-      line-height: 1.7;
+      padding: 20px 28px;
+      margin: 30px 0 40px 0;
+    }
+
+    .scale-box h2 {
+      margin-top: 0;
     }
 
     .scale-box ul {
       margin-bottom: 0;
+      padding-left: 25px;
+    }
+
+    .scale-box li {
+      margin-bottom: 9px;
+    }
+
+    /* TABLA */
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
     }
 
     table {
@@ -80,47 +134,53 @@
       margin-top: 20px;
     }
 
-    th, td {
-      border: 1px solid #ddd;
-      padding: 14px;
+    th {
+      background-color: #1f4164;
+      color: white;
+      padding: 16px;
+      border: 1px solid #d4d4d4;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    td {
+      border: 1px solid #d8d8d8;
+      padding: 15px;
       vertical-align: middle;
     }
 
-    th {
-      background: #1f3c5c;
-      color: white;
-      text-align: center;
-    }
-
     td:first-child {
+      width: 68%;
       text-align: left;
       font-weight: 600;
       line-height: 1.5;
     }
 
-    td:not(:first-child) {
+    td:nth-child(2),
+    td:nth-child(3) {
+      width: 16%;
       text-align: center;
     }
 
-    select {
-      padding: 8px;
-      width: 75px;
-      border-radius: 5px;
-      border: 1px solid #aaa;
-      font-size: 15px;
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
     }
 
-    textarea {
-      width: 100%;
-      min-height: 140px;
-      box-sizing: border-box;
-      padding: 12px;
-      border: 1px solid #bbb;
-      border-radius: 6px;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      resize: vertical;
+    tbody tr:hover {
+      background-color: #f1f5f8;
     }
+
+    select {
+      width: 80px;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      background-color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* COMENTARIOS */
 
     .comments-grid {
       display: grid;
@@ -129,263 +189,559 @@
       margin-top: 20px;
     }
 
+    .comment-box {
+      background-color: #f8fafc;
+      border: 1px solid #d6dde4;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
     .comment-box label {
       display: block;
+      color: #1f4164;
       font-weight: bold;
-      color: #1f3c5c;
-      margin-bottom: 8px;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 12px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      resize: vertical;
+    }
+
+    /* BOTÓN */
+
+    .button-container {
+      text-align: center;
+      margin-top: 35px;
     }
 
     button {
-      display: block;
-      margin: 35px auto 15px auto;
-      padding: 14px 30px;
-      background: #1f3c5c;
+      background-color: #1f4164;
       color: white;
       border: none;
+      padding: 15px 35px;
       border-radius: 6px;
-      font-size: 16px;
+      font-size: 17px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background-color 0.2s;
     }
 
     button:hover {
-      background: #305b86;
+      background-color: #315d87;
     }
 
+    /* RESULTADO */
+
     #resultado {
-      margin-top: 30px;
-      padding: 25px;
-      background: #eef3f7;
+      display: none;
+      margin-top: 35px;
+      padding: 28px;
+      background-color: #eef3f7;
+      border: 1px solid #d6dde4;
       border-radius: 8px;
       text-align: center;
-      display: none;
     }
 
     .puntaje {
-      font-size: 20px;
-      margin: 10px 0;
+      font-size: 19px;
+      margin: 12px 0;
     }
 
     .ganador {
-      font-size: 24px;
+      color: #1f4164;
+      font-size: 23px;
       font-weight: bold;
-      color: #1f3c5c;
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
-    .nota {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #666;
+    /* PIE */
+
+    .footer {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
       text-align: center;
-      line-height: 1.5;
+      color: #666;
+      font-size: 13px;
     }
+
+    /* RESPONSIVE */
 
     @media (max-width: 850px) {
+
+      .container {
+        margin: 10px;
+        padding: 20px;
+      }
+
       .works,
       .comments-grid {
         grid-template-columns: 1fr;
       }
 
-      .container {
-        margin: 15px;
-        padding: 20px;
+      h1 {
+        font-size: 26px;
+      }
+
+      .logo {
+        max-width: 230px;
       }
 
       table {
         font-size: 14px;
       }
 
-      th, td {
-        padding: 9px;
+      th,
+      td {
+        padding: 10px;
       }
+
+      td:first-child {
+        min-width: 400px;
+      }
+
     }
+
   </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+  <!-- LOGOTIPO AMEI -->
+
   <div class="logo-container">
     <img
-      src="https://amei.mx/wp-content/uploads/2021/06/AMEI-Logo-Oficial.png"
+      src="http://amei.mx/wp-content/uploads/2021/06/AMEI-Logo-Oficial.png"
       alt="Asociación Mexicana de Estudios Internacionales"
-      class="amei-logo">
+      class="logo"
+    >
   </div>
+
+
+  <!-- TÍTULO -->
 
   <h1>Evaluación comparativa de obras académicas</h1>
 
+  <div class="subtitle">
+    Asociación Mexicana de Estudios Internacionales
+  </div>
+
   <p class="intro">
-    Asigne una puntuación de 1 a 5 a cada obra de acuerdo con los criterios establecidos.
-    La evaluación busca comparar de manera sistemática la calidad, relevancia y aportación
-    académica de ambas publicaciones.
+    El presente instrumento tiene como propósito realizar una evaluación
+    comparativa de dos obras académicas. Asigne una puntuación de 1 a 5
+    a cada obra de acuerdo con los criterios establecidos y la escala
+    de evaluación que se presenta a continuación.
   </p>
+
+
+  <!-- OBRAS -->
 
   <div class="works">
 
     <div class="work-card">
-      <strong>Obra A</strong><br><br>
-      Uscanga, A. (2025). <em>Las Relaciones Entre México y Japón. Otra Mirada sobre la diplomacia y la migración.</em> Teseo.
+
+      <div class="work-title">
+        Obra A
+      </div>
+
+      Uscanga, A. (2025).
+      <em>
+        Las Relaciones Entre México y Japón. Otra Mirada sobre la
+        diplomacia y la migración.
+      </em>
+      Teseo.
+
     </div>
 
+
     <div class="work-card">
-      <strong>Obra B</strong><br><br>
-      Tigau, C. (2025). <em>Exilio intelectual en la Norteamérica del siglo XXI. Cómo salvar su nueva vida. Tomo I, Canadá.</em> UNAM-CISAN.
+
+      <div class="work-title">
+        Obra B
+      </div>
+
+      Tigau, C. (2025).
+      <em>
+        Exilio intelectual en la Norteamérica del siglo XXI.
+        Cómo salvar su nueva vida. Tomo I, Canadá.
+      </em>
+      UNAM-CISAN.
+
     </div>
 
   </div>
 
+
+  <!-- ESCALA -->
+
   <div class="scale-box">
+
     <h2>Escala de evaluación</h2>
 
     <ul>
-      <li><strong>1 — Deficiente:</strong> el criterio no se satisface o presenta deficiencias importantes.</li>
-      <li><strong>2 — Insuficiente:</strong> se satisface parcialmente, con limitaciones considerables.</li>
-      <li><strong>3 — Adecuado:</strong> cumple satisfactoriamente con lo esperado.</li>
-      <li><strong>4 — Muy bueno:</strong> supera de manera clara los estándares esperados.</li>
-      <li><strong>5 — Excelente:</strong> cumplimiento sobresaliente del criterio.</li>
+
+      <li>
+        <strong>1 — Deficiente:</strong>
+        el criterio no se satisface o presenta deficiencias importantes.
+      </li>
+
+      <li>
+        <strong>2 — Insuficiente:</strong>
+        se satisface parcialmente, con limitaciones considerables.
+      </li>
+
+      <li>
+        <strong>3 — Adecuado:</strong>
+        cumple satisfactoriamente con lo esperado.
+      </li>
+
+      <li>
+        <strong>4 — Muy bueno:</strong>
+        supera de manera clara los estándares esperados.
+      </li>
+
+      <li>
+        <strong>5 — Excelente:</strong>
+        cumplimiento sobresaliente del criterio.
+      </li>
+
     </ul>
+
   </div>
+
+
+  <!-- CRITERIOS -->
 
   <h2>Criterios de evaluación</h2>
 
-  <table>
+  <div class="table-container">
 
-    <thead>
-      <tr>
-        <th>Criterio de evaluación</th>
-        <th>Obra A</th>
-        <th>Obra B</th>
-      </tr>
-    </thead>
+    <table>
 
-    <tbody>
+      <thead>
 
-      <tr>
-        <td>1. Relevancia del tema para las Relaciones Internacionales.</td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+        <tr>
+          <th>Criterio de evaluación</th>
+          <th>Obra A</th>
+          <th>Obra B</th>
+        </tr>
 
-      <tr>
-        <td>2. Construcción y explicación del marco teórico.</td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+      </thead>
 
-      <tr>
-        <td>3. Nivel de análisis por tipo de obra del que se trata.</td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
 
-      <tr>
-        <td>4. Metodología adecuada y profundidad de los instrumentos metodológicos.</td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+      <tbody>
 
-      <tr>
-        <td>
-          5. Referencias utilizadas (procedencia y seriedad). ¿El conjunto de citas,
-          referencias y notas aclaratorias es adecuado, pertinente y suficiente?
-        </td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+        <tr>
 
-      <tr>
-        <td>6. Claridad de estilo y redacción.</td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+          <td>
+            1. Relevancia del tema para las Relaciones Internacionales.
+          </td>
 
-      <tr>
-        <td>
-          7. Aportaciones a diferentes comunidades de Relaciones Internacionales:
-          estudiantes de grado y posgrado, profesores investigadores, diplomáticos,
-          funcionarios públicos y otros actores.
-        </td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+          <td>
+            <select class="obraA"></select>
+          </td>
 
-      <tr>
-        <td>
-          8. Guarda coherencia interna entre todos los capítulos que lo integran y
-          presenta reflexiones en torno a un tema en común.
-        </td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+          <td>
+            <select class="obraB"></select>
+          </td>
 
-      <tr>
-        <td>
-          9. Constituye una contribución original y significativa para el conocimiento
-          del tema abordado.
-        </td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+        </tr>
 
-      <tr>
-        <td>
-          10. Estructura y articulación del tema estudiado. ¿Se aborda de forma
-          significativa el tema planteado y la explicación de este es congruente?
-        </td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
 
-      <tr>
-        <td>11. Análisis sustantivo del tema planteado.</td>
-        <td><select class="obraA"></select></td>
-        <td><select class="obraB"></select></td>
-      </tr>
+        <tr>
 
-    </tbody>
+          <td>
+            2. Construcción y explicación del marco teórico.
+          </td>
 
-  </table>
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            3. Nivel de análisis por tipo de obra del que se trata.
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            4. Metodología adecuada y profundidad de los instrumentos
+            metodológicos.
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            5. Referencias utilizadas (procedencia y seriedad).
+            ¿El conjunto de citas, referencias y notas aclaratorias
+            es adecuado, pertinente y suficiente?
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            6. Claridad de estilo y redacción.
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            7. Aportaciones a diferentes comunidades de Relaciones
+            Internacionales: estudiantes de grado y posgrado,
+            profesores investigadores, diplomáticos y funcionarios
+            públicos, y otros actores.
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            8. Guarda coherencia interna entre todos los capítulos que
+            lo integran y presenta reflexiones en torno a un tema en común.
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            9. Constituye una contribución original y significativa
+            para el conocimiento del tema abordado.
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            10. Estructura y articulación del tema estudiado.
+            ¿Se aborda de forma significativa el tema planteado y
+            la explicación de este es congruente?
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            11. Análisis sustantivo del tema planteado.
+          </td>
+
+          <td>
+            <select class="obraA"></select>
+          </td>
+
+          <td>
+            <select class="obraB"></select>
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- COMENTARIOS -->
 
   <h2>12. Comentarios adicionales que quiera añadir</h2>
 
   <div class="comments-grid">
 
     <div class="comment-box">
-      <label for="comentarioA">Comentarios sobre la Obra A</label>
-      <textarea id="comentarioA"
-        placeholder="Escriba aquí sus comentarios adicionales sobre la Obra A..."></textarea>
+
+      <label for="comentarioA">
+        Comentarios sobre la Obra A
+      </label>
+
+      <textarea
+        id="comentarioA"
+        placeholder="Escriba aquí sus comentarios adicionales sobre la Obra A..."
+      ></textarea>
+
     </div>
+
 
     <div class="comment-box">
-      <label for="comentarioB">Comentarios sobre la Obra B</label>
-      <textarea id="comentarioB"
-        placeholder="Escriba aquí sus comentarios adicionales sobre la Obra B..."></textarea>
+
+      <label for="comentarioB">
+        Comentarios sobre la Obra B
+      </label>
+
+      <textarea
+        id="comentarioB"
+        placeholder="Escriba aquí sus comentarios adicionales sobre la Obra B..."
+      ></textarea>
+
     </div>
 
   </div>
 
-  <button onclick="calcularResultado()">Calcular resultado</button>
 
-  <div id="resultado">
-    <div class="puntaje" id="resultadoA"></div>
-    <div class="puntaje" id="resultadoB"></div>
-    <div class="ganador" id="ganador"></div>
+  <!-- BOTÓN -->
+
+  <div class="button-container">
+
+    <button type="button" onclick="calcularResultado()">
+      Calcular resultado
+    </button>
+
   </div>
 
-  <p class="nota">
+
+  <!-- RESULTADOS -->
+
+  <div id="resultado">
+
+    <h2>Resultado de la evaluación</h2>
+
+    <div
+      class="puntaje"
+      id="resultadoA">
+    </div>
+
+    <div
+      class="puntaje"
+      id="resultadoB">
+    </div>
+
+    <div
+      class="ganador"
+      id="ganador">
+    </div>
+
+  </div>
+
+
+  <!-- PIE -->
+
+  <div class="footer">
+
+    Asociación Mexicana de Estudios Internacionales<br>
     Instrumento de evaluación comparativa de obras académicas.
-  </p>
+
+  </div>
 
 </div>
 
+
 <script>
 
+  /*
+  ------------------------------------------------------
+  GENERAR ESCALA DE 1 A 5
+  ------------------------------------------------------
+  */
+
   function crearOpciones() {
+
     const selects = document.querySelectorAll("select");
 
-    selects.forEach(select => {
+    selects.forEach(function(select) {
+
       select.innerHTML = `
         <option value="">--</option>
         <option value="1">1</option>
@@ -394,71 +750,162 @@
         <option value="4">4</option>
         <option value="5">5</option>
       `;
+
     });
+
   }
 
   crearOpciones();
 
+
+  /*
+  ------------------------------------------------------
+  CALCULAR RESULTADOS
+  ------------------------------------------------------
+  */
+
   function calcularResultado() {
 
-    const valoresA = document.querySelectorAll(".obraA");
-    const valoresB = document.querySelectorAll(".obraB");
+    const valoresA =
+      document.querySelectorAll(".obraA");
+
+    const valoresB =
+      document.querySelectorAll(".obraB");
 
     let totalA = 0;
     let totalB = 0;
 
+
+    /*
+    Verificar que todos los criterios
+    hayan sido evaluados.
+    */
+
     for (let i = 0; i < valoresA.length; i++) {
 
-      if (valoresA[i].value === "" || valoresB[i].value === "") {
-        alert("Por favor, complete todas las evaluaciones antes de calcular el resultado.");
+      if (
+        valoresA[i].value === "" ||
+        valoresB[i].value === ""
+      ) {
+
+        alert(
+          "Por favor, asigne una puntuación a todos los criterios de ambas obras antes de calcular el resultado."
+        );
+
         return;
+
       }
 
-      totalA += parseInt(valoresA[i].value);
-      totalB += parseInt(valoresB[i].value);
+      totalA +=
+        parseInt(valoresA[i].value);
+
+      totalB +=
+        parseInt(valoresB[i].value);
+
     }
 
-    const maximo = valoresA.length * 5;
 
-    const porcentajeA = ((totalA / maximo) * 100).toFixed(1);
-    const porcentajeB = ((totalB / maximo) * 100).toFixed(1);
+    /*
+    Cálculos
+    */
 
-    const promedioA = (totalA / valoresA.length).toFixed(2);
-    const promedioB = (totalB / valoresB.length).toFixed(2);
+    const numeroCriterios =
+      valoresA.length;
+
+    const maximo =
+      numeroCriterios * 5;
+
+    const promedioA =
+      (totalA / numeroCriterios).toFixed(2);
+
+    const promedioB =
+      (totalB / numeroCriterios).toFixed(2);
+
+    const porcentajeA =
+      ((totalA / maximo) * 100).toFixed(1);
+
+    const porcentajeB =
+      ((totalB / maximo) * 100).toFixed(1);
+
+
+    /*
+    Mostrar resultados
+    */
 
     document.getElementById("resultadoA").innerHTML =
       "<strong>Obra A:</strong> " +
-      totalA + " de " + maximo +
-      " puntos | Promedio: " + promedioA +
-      " | " + porcentajeA + "%";
+      totalA +
+      " de " +
+      maximo +
+      " puntos | Promedio: " +
+      promedioA +
+      " de 5 | " +
+      porcentajeA +
+      "%";
+
 
     document.getElementById("resultadoB").innerHTML =
       "<strong>Obra B:</strong> " +
-      totalB + " de " + maximo +
-      " puntos | Promedio: " + promedioB +
-      " | " + porcentajeB + "%";
+      totalB +
+      " de " +
+      maximo +
+      " puntos | Promedio: " +
+      promedioB +
+      " de 5 | " +
+      porcentajeB +
+      "%";
+
+
+    /*
+    Determinar resultado comparativo
+    */
 
     let mensaje = "";
 
     if (totalA > totalB) {
-      mensaje = "La Obra A obtiene la puntuación más alta.";
-    }
-    else if (totalB > totalA) {
-      mensaje = "La Obra B obtiene la puntuación más alta.";
-    }
-    else {
-      mensaje = "Ambas obras obtienen la misma puntuación.";
+
+      mensaje =
+        "La Obra A obtiene la puntuación más alta.";
+
     }
 
-    document.getElementById("ganador").innerHTML = mensaje;
-    document.getElementById("resultado").style.display = "block";
+    else if (totalB > totalA) {
+
+      mensaje =
+        "La Obra B obtiene la puntuación más alta.";
+
+    }
+
+    else {
+
+      mensaje =
+        "Ambas obras obtienen la misma puntuación.";
+
+    }
+
+
+    document.getElementById("ganador").innerHTML =
+      mensaje;
+
+
+    document.getElementById("resultado").style.display =
+      "block";
+
+
+    /*
+    Desplazarse automáticamente
+    hasta los resultados.
+    */
 
     document.getElementById("resultado").scrollIntoView({
-      behavior: "smooth"
+      behavior: "smooth",
+      block: "start"
     });
+
   }
 
 </script>
+
 
 </body>
 </html>
