@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evaluación del Premio MSV 2026</title>
+  <title>Evaluación comparativa de obras académicas</title>
 
   <style>
     body {
@@ -15,7 +15,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 40px auto;
       background: white;
       padding: 35px;
@@ -29,10 +29,49 @@
       margin-bottom: 10px;
     }
 
+    h2 {
+      color: #1f3c5c;
+      margin-top: 35px;
+    }
+
     .intro {
       text-align: center;
       color: #555;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .works {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .work-card {
+      background: #eef3f7;
+      border-left: 5px solid #1f3c5c;
+      padding: 20px;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    .work-card strong {
+      color: #1f3c5c;
+      font-size: 18px;
+    }
+
+    .scale-box {
+      background: #f8fafc;
+      border: 1px solid #d7dee5;
+      padding: 20px 25px;
+      border-radius: 8px;
+      margin: 25px 0 35px 0;
+      line-height: 1.7;
+    }
+
+    .scale-box ul {
+      margin-bottom: 0;
     }
 
     table {
@@ -44,30 +83,63 @@
     th, td {
       border: 1px solid #ddd;
       padding: 14px;
-      text-align: center;
+      vertical-align: middle;
     }
 
     th {
       background: #1f3c5c;
       color: white;
+      text-align: center;
     }
 
     td:first-child {
       text-align: left;
       font-weight: 600;
+      line-height: 1.5;
+    }
+
+    td:not(:first-child) {
+      text-align: center;
     }
 
     select {
-      padding: 7px;
-      width: 70px;
+      padding: 8px;
+      width: 75px;
       border-radius: 5px;
       border: 1px solid #aaa;
+      font-size: 15px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      box-sizing: border-box;
+      padding: 12px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      resize: vertical;
+    }
+
+    .comments-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .comment-box label {
+      display: block;
+      font-weight: bold;
+      color: #1f3c5c;
+      margin-bottom: 8px;
     }
 
     button {
       display: block;
-      margin: 30px auto;
-      padding: 14px 28px;
+      margin: 35px auto 15px auto;
+      padding: 14px 30px;
       background: #1f3c5c;
       color: white;
       border: none;
@@ -106,6 +178,27 @@
       font-size: 13px;
       color: #666;
       text-align: center;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 850px) {
+      .works,
+      .comments-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        margin: 15px;
+        padding: 20px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+
+      th, td {
+        padding: 9px;
+      }
     }
   </style>
 </head>
@@ -114,12 +207,41 @@
 
 <div class="container">
 
-  <h1>Evaluación del Premio MSV 2026</h1>
+  <h1>Evaluación comparativa de obras académicas</h1>
 
   <p class="intro">
     Asigne una puntuación de 1 a 5 a cada obra de acuerdo con los criterios establecidos.
-    1 representa la valoración más baja y 5 la valoración más alta.
+    La evaluación busca comparar de manera sistemática la calidad, relevancia y aportación
+    académica de ambas publicaciones.
   </p>
+
+  <div class="works">
+
+    <div class="work-card">
+      <strong>Obra A</strong><br><br>
+      Uscanga, A. (2025). <em>Las Relaciones Entre México y Japón. Otra Mirada sobre la diplomacia y la migración.</em> Teseo.
+    </div>
+
+    <div class="work-card">
+      <strong>Obra B</strong><br><br>
+      Tigau, C. (2025). <em>Exilio intelectual en la Norteamérica del siglo XXI. Cómo salvar su nueva vida. Tomo I, Canadá.</em> UNAM-CISAN.
+    </div>
+
+  </div>
+
+  <div class="scale-box">
+    <h2>Escala de evaluación</h2>
+
+    <ul>
+      <li><strong>1 — Deficiente:</strong> el criterio no se satisface o presenta deficiencias importantes.</li>
+      <li><strong>2 — Insuficiente:</strong> se satisface parcialmente, con limitaciones considerables.</li>
+      <li><strong>3 — Adecuado:</strong> cumple satisfactoriamente con lo esperado.</li>
+      <li><strong>4 — Muy bueno:</strong> supera de manera clara los estándares esperados.</li>
+      <li><strong>5 — Excelente:</strong> cumplimiento sobresaliente del criterio.</li>
+    </ul>
+  </div>
+
+  <h2>Criterios de evaluación</h2>
 
   <table>
 
@@ -134,183 +256,108 @@
     <tbody>
 
       <tr>
-        <td>Originalidad de la investigación</td>
-        <td>
-          <select class="obraA">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
-
-        <td>
-          <select class="obraB">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
+        <td>1. Relevancia del tema para las Relaciones Internacionales.</td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
       </tr>
 
       <tr>
-        <td>Rigor metodológico</td>
-        <td>
-          <select class="obraA">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
-
-        <td>
-          <select class="obraB">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
+        <td>2. Construcción y explicación del marco teórico.</td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
       </tr>
 
       <tr>
-        <td>Calidad del marco teórico</td>
-        <td>
-          <select class="obraA">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
-
-        <td>
-          <select class="obraB">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
+        <td>3. Nivel de análisis por tipo de obra del que se trata.</td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
       </tr>
 
       <tr>
-        <td>Uso y calidad de las fuentes</td>
-        <td>
-          <select class="obraA">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
-
-        <td>
-          <select class="obraB">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
+        <td>4. Metodología adecuada y profundidad de los instrumentos metodológicos.</td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
       </tr>
 
       <tr>
-        <td>Claridad y coherencia argumentativa</td>
         <td>
-          <select class="obraA">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          5. Referencias utilizadas (procedencia y seriedad). ¿El conjunto de citas,
+          referencias y notas aclaratorias es adecuado, pertinente y suficiente?
         </td>
-
-        <td>
-          <select class="obraB">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
       </tr>
 
       <tr>
-        <td>Relevancia académica</td>
-        <td>
-          <select class="obraA">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
-
-        <td>
-          <select class="obraB">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </td>
+        <td>6. Claridad de estilo y redacción.</td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
       </tr>
 
       <tr>
-        <td>Contribución al campo de estudio</td>
         <td>
-          <select class="obraA">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          7. Aportaciones a diferentes comunidades de Relaciones Internacionales:
+          estudiantes de grado y posgrado, profesores investigadores, diplomáticos,
+          funcionarios públicos y otros actores.
         </td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
+      </tr>
 
+      <tr>
         <td>
-          <select class="obraB">
-            <option value="">--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          8. Guarda coherencia interna entre todos los capítulos que lo integran y
+          presenta reflexiones en torno a un tema en común.
         </td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
+      </tr>
+
+      <tr>
+        <td>
+          9. Constituye una contribución original y significativa para el conocimiento
+          del tema abordado.
+        </td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
+      </tr>
+
+      <tr>
+        <td>
+          10. Estructura y articulación del tema estudiado. ¿Se aborda de forma
+          significativa el tema planteado y la explicación de este es congruente?
+        </td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
+      </tr>
+
+      <tr>
+        <td>11. Análisis sustantivo del tema planteado.</td>
+        <td><select class="obraA"></select></td>
+        <td><select class="obraB"></select></td>
       </tr>
 
     </tbody>
 
   </table>
+
+  <h2>12. Comentarios adicionales que quiera añadir</h2>
+
+  <div class="comments-grid">
+
+    <div class="comment-box">
+      <label for="comentarioA">Comentarios sobre la Obra A</label>
+      <textarea id="comentarioA"
+        placeholder="Escriba aquí sus comentarios adicionales sobre la Obra A..."></textarea>
+    </div>
+
+    <div class="comment-box">
+      <label for="comentarioB">Comentarios sobre la Obra B</label>
+      <textarea id="comentarioB"
+        placeholder="Escriba aquí sus comentarios adicionales sobre la Obra B..."></textarea>
+    </div>
+
+  </div>
 
   <button onclick="calcularResultado()">Calcular resultado</button>
 
@@ -321,62 +368,88 @@
   </div>
 
   <p class="nota">
-    Instrumento de evaluación académica.
+    Instrumento de evaluación comparativa de obras académicas.
   </p>
 
 </div>
 
 <script>
 
-function calcularResultado() {
+  function crearOpciones() {
+    const selects = document.querySelectorAll("select");
 
-  const valoresA = document.querySelectorAll(".obraA");
-  const valoresB = document.querySelectorAll(".obraB");
+    selects.forEach(select => {
+      select.innerHTML = `
+        <option value="">--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      `;
+    });
+  }
 
-  let totalA = 0;
-  let totalB = 0;
+  crearOpciones();
 
-  for (let i = 0; i < valoresA.length; i++) {
+  function calcularResultado() {
 
-    if (valoresA[i].value === "" || valoresB[i].value === "") {
-      alert("Por favor, complete todas las evaluaciones antes de calcular el resultado.");
-      return;
+    const valoresA = document.querySelectorAll(".obraA");
+    const valoresB = document.querySelectorAll(".obraB");
+
+    let totalA = 0;
+    let totalB = 0;
+
+    for (let i = 0; i < valoresA.length; i++) {
+
+      if (valoresA[i].value === "" || valoresB[i].value === "") {
+        alert("Por favor, complete todas las evaluaciones antes de calcular el resultado.");
+        return;
+      }
+
+      totalA += parseInt(valoresA[i].value);
+      totalB += parseInt(valoresB[i].value);
     }
 
-    totalA += parseInt(valoresA[i].value);
-    totalB += parseInt(valoresB[i].value);
+    const maximo = valoresA.length * 5;
+
+    const porcentajeA = ((totalA / maximo) * 100).toFixed(1);
+    const porcentajeB = ((totalB / maximo) * 100).toFixed(1);
+
+    const promedioA = (totalA / valoresA.length).toFixed(2);
+    const promedioB = (totalB / valoresB.length).toFixed(2);
+
+    document.getElementById("resultadoA").innerHTML =
+      "<strong>Obra A:</strong> " +
+      totalA + " de " + maximo +
+      " puntos | Promedio: " + promedioA +
+      " | " + porcentajeA + "%";
+
+    document.getElementById("resultadoB").innerHTML =
+      "<strong>Obra B:</strong> " +
+      totalB + " de " + maximo +
+      " puntos | Promedio: " + promedioB +
+      " | " + porcentajeB + "%";
+
+    let mensaje = "";
+
+    if (totalA > totalB) {
+      mensaje = "La Obra A obtiene la puntuación más alta.";
+    }
+    else if (totalB > totalA) {
+      mensaje = "La Obra B obtiene la puntuación más alta.";
+    }
+    else {
+      mensaje = "Ambas obras obtienen la misma puntuación.";
+    }
+
+    document.getElementById("ganador").innerHTML = mensaje;
+    document.getElementById("resultado").style.display = "block";
+
+    document.getElementById("resultado").scrollIntoView({
+      behavior: "smooth"
+    });
   }
-
-  const maximo = valoresA.length * 5;
-
-  const porcentajeA = ((totalA / maximo) * 100).toFixed(1);
-  const porcentajeB = ((totalB / maximo) * 100).toFixed(1);
-
-  document.getElementById("resultadoA").innerHTML =
-    "<strong>Obra A:</strong> " + totalA + " de " + maximo +
-    " puntos (" + porcentajeA + "%)";
-
-  document.getElementById("resultadoB").innerHTML =
-    "<strong>Obra B:</strong> " + totalB + " de " + maximo +
-    " puntos (" + porcentajeB + "%)";
-
-  let mensaje = "";
-
-  if (totalA > totalB) {
-    mensaje = "Obra A obtiene la mejor evaluación.";
-  }
-  else if (totalB > totalA) {
-    mensaje = "Obra B obtiene la mejor evaluación.";
-  }
-  else {
-    mensaje = "Las dos obras obtienen la misma puntuación.";
-  }
-
-  document.getElementById("ganador").innerHTML = mensaje;
-
-  document.getElementById("resultado").style.display = "block";
-
-}
 
 </script>
 
