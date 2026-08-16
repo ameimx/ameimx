@@ -1,1 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación comparativa de obras académicas</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f3c5c;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #555;
+      margin-bottom: 35px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 14px;
+      text-align: center;
+    }
+
+    th {
+      background: #1f3c5c;
+      color: white;
+    }
+
+    td:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    select {
+      padding: 7px;
+      width: 70px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 14px 28px;
+      background: #1f3c5c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #305b86;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      padding: 25px;
+      background: #eef3f7;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+
+    .puntaje {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .ganador {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1f3c5c;
+      margin-top: 20px;
+    }
+
+    .nota {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Evaluación comparativa de obras académicas</h1>
+
+  <p class="intro">
+    Asigne una puntuación de 1 a 5 a cada obra de acuerdo con los criterios establecidos.
+    1 representa la valoración más baja y 5 la valoración más alta.
+  </p>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Criterio de evaluación</th>
+        <th>Obra A</th>
+        <th>Obra B</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Originalidad de la investigación</td>
+        <td>
+          <select class="obraA">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="obraB">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Rigor metodológico</td>
+        <td>
+          <select class="obraA">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="obraB">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Calidad del marco teórico</td>
+        <td>
+          <select class="obraA">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="obraB">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Uso y calidad de las fuentes</td>
+        <td>
+          <select class="obraA">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="obraB">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Claridad y coherencia argumentativa</td>
+        <td>
+          <select class="obraA">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="obraB">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Relevancia académica</td>
+        <td>
+          <select class="obraA">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="obraB">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Contribución al campo de estudio</td>
+        <td>
+          <select class="obraA">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+
+        <td>
+          <select class="obraB">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <button onclick="calcularResultado()">Calcular resultado</button>
+
+  <div id="resultado">
+    <div class="puntaje" id="resultadoA"></div>
+    <div class="puntaje" id="resultadoB"></div>
+    <div class="ganador" id="ganador"></div>
+  </div>
+
+  <p class="nota">
+    Instrumento de evaluación académica.
+  </p>
+
+</div>
+
+<script>
+
+function calcularResultado() {
+
+  const valoresA = document.querySelectorAll(".obraA");
+  const valoresB = document.querySelectorAll(".obraB");
+
+  let totalA = 0;
+  let totalB = 0;
+
+  for (let i = 0; i < valoresA.length; i++) {
+
+    if (valoresA[i].value === "" || valoresB[i].value === "") {
+      alert("Por favor, complete todas las evaluaciones antes de calcular el resultado.");
+      return;
+    }
+
+    totalA += parseInt(valoresA[i].value);
+    totalB += parseInt(valoresB[i].value);
+  }
+
+  const maximo = valoresA.length * 5;
+
+  const porcentajeA = ((totalA / maximo) * 100).toFixed(1);
+  const porcentajeB = ((totalB / maximo) * 100).toFixed(1);
+
+  document.getElementById("resultadoA").innerHTML =
+    "<strong>Obra A:</strong> " + totalA + " de " + maximo +
+    " puntos (" + porcentajeA + "%)";
+
+  document.getElementById("resultadoB").innerHTML =
+    "<strong>Obra B:</strong> " + totalB + " de " + maximo +
+    " puntos (" + porcentajeB + "%)";
+
+  let mensaje = "";
+
+  if (totalA > totalB) {
+    mensaje = "Obra A obtiene la mejor evaluación.";
+  }
+  else if (totalB > totalA) {
+    mensaje = "Obra B obtiene la mejor evaluación.";
+  }
+  else {
+    mensaje = "Las dos obras obtienen la misma puntuación.";
+  }
+
+  document.getElementById("ganador").innerHTML = mensaje;
+
+  document.getElementById("resultado").style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
